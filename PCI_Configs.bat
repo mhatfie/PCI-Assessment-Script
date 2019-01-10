@@ -245,7 +245,7 @@ REM	echo --------------------------------------------------
 REM	echo  Executing WinAudit
 REM	echo --------------------------------------------------
 REM		cd %filedir%\tools\
-REM		WinAudit.exe /r=gsoPxuTUeERNtnzDaIbMpmidcSArCHGBLJF /o=XML /f="%tempdir%\%Hostname% WinAudit.xml" /m="Coalfire PCI WinAudit"
+		WinAudit.exe /r=gsoPxuTUeERNtnzDaIbMpmidcSArCOHG /m="PCI WinAudit"
 
 cd %filedir%\tools\
 	echo --------------------------------------------------

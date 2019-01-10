@@ -111,7 +111,7 @@ echo:
 :Domain
 cls
 color 0A
-echo PCI 2.0 Audit V_%version%
+echo PCI DSS 3.2.1 - Audit V_%version%
 echo:
 echo:
 echo SITE:  	%SiteName% 

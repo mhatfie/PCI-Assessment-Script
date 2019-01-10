@@ -47,6 +47,12 @@ REM Changelog
 REM ---------
 REM
 REM ------------
+set version=2.4.1
+REM ------------
+REM Update WinAudit to version 3.2.1
+REM Enable WinAudit
+REM change PCI version number
+REM ------------
 set version=2.4
 REM ------------
 REM Added Active Directory password last changed
@@ -86,7 +92,7 @@ REM ****************************************************************************
 cls
 
 :Top
-echo PCI 2.0 Audit V_%version%
+echo PCI DSS 3.2.1 - Audit V_%version%
 echo:
 echo:
 
@@ -245,7 +251,7 @@ REM	echo --------------------------------------------------
 REM	echo  Executing WinAudit
 REM	echo --------------------------------------------------
 REM		cd %filedir%\tools\
-		WinAudit.exe /r=gsoPxuTUeERNtnzDaIbMpmidcSArCOHG /m="PCI WinAudit"
+		%filedir%\tools\WinAudit.exe /r=gsoPxuTUeERNtnzDaIbMpmidcSArCOHG /m="PCI WinAudit"
 
 cd %filedir%\tools\
 	echo --------------------------------------------------

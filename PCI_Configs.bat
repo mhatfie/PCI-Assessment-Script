@@ -53,7 +53,7 @@ REM Update WinAudit to version 3.2.1
 REM Enable WinAudit
 REM change PCI version number
 REM ------------
-set version=2.4
+REM version=2.4
 REM ------------
 REM Added Active Directory password last changed
 REM Added Active Directory password never expires
@@ -152,7 +152,7 @@ REM Lets make some directories...
 
 cls
 color 0A
-echo PCI 2.0 Audit V_%version%
+echo PCI DSS 3.2.1 - Audit V_%version%
 echo:
 echo:
 echo SITE:  	%SiteName% 
@@ -184,8 +184,8 @@ echo:
 	echo  Grabbing Listening Services
 	echo --------------------------------------------------
 		netstat -nao | findstr LISTENING >> "%tempdir%\Req 2\2.2.2 %Hostname% Listening Services.txt"
-		netstat –r >> "%tempdir%\Req 2\2.2.2 %Hostname% Listening Services 2.txt"
-		netstat –nabo >> "%tempdir%\Req 2\2.2.2 %Hostname% Listening Services 3.txt"
+		netstat -r >> "%tempdir%\Req 2\2.2.2 %Hostname% Listening Services 2.txt"
+		netstat -nabo >> "%tempdir%\Req 2\2.2.2 %Hostname% Listening Services 3.txt"
 		netstat -na | findstr :21 >> "%tempdir%\Req 2\2.2.2 %Hostname% Listening Services FTP.txt" 
 		netstat -na | findstr :23 >> "%tempdir%\Req 2\2.2.2 %Hostname% Listening Services Telnet.txt" 
 	echo --------------------------------------------------
@@ -209,8 +209,8 @@ echo:
 	echo --------------------------------------------------
 		net localgroup administrators /domain >> "%tempdir%\Req 8\8.1 %Hostname% Domain Administrators.txt"  
 		net group "Domain Admins" /domain >> "%tempdir%\Req 8\8.1 %Hostname% Domain Administrators 2.txt"  
-		net group “Enterprise Admins” /domain >> "%tempdir%\Req 8\8.1 %Hostname% Enterprise Administrators.txt" 
-		net group “Domain Controllers” /domain >> "%tempdir%\Req 8\8.1 %Hostname% Domain Controllers.txt"  
+		net group "Enterprise Admins" /domain >> "%tempdir%\Req 8\8.1 %Hostname% Enterprise Administrators.txt" 
+		net group "Domain Controllers" /domain >> "%tempdir%\Req 8\8.1 %Hostname% Domain Controllers.txt"  
 	echo --------------------------------------------------
 	echo  Grabbing Local Firewall Settings
 	echo --------------------------------------------------
@@ -230,9 +230,12 @@ echo:
 	echo --------------------------------------------------
 	echo Grabbing the Screensaver Settings
 	echo --------------------------------------------------
-		reg query "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop" /v ScreenSaveActive >> "%tempdir%\Req 8\8.5.15 %Hostname% Screensaver Settings.txt"
-		reg query "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop" /v ScreenSaverIsSecure >> "%tempdir%\Req 8\8.5.15 %Hostname% Screensaver Settings.txt"
-		reg query "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop" /v ScreenSaveTimeOut >> "%tempdir%\Req 8\8.5.15 %Hostname% Screensaver Settings.txt" 
+REM		reg query "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop" /v ScreenSaveActive >> "%tempdir%\Req 8\8.5.15 %Hostname% Screensaver Settings.txt"
+REM		reg query "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop" /v ScreenSaverIsSecure >> "%tempdir%\Req 8\8.5.15 %Hostname% Screensaver Settings.txt"
+REM		reg query "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Control Panel\Desktop" /v ScreenSaveTimeOut >> "%tempdir%\Req 8\8.5.15 %Hostname% Screensaver Settings.txt" 
+		reg query "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveActive >> "%tempdir%\Req 8\8.5.15 %Hostname% Screensaver Settings.txt"
+		reg query "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaverIsSecure >> "%tempdir%\Req 8\8.5.15 %Hostname% Screensaver Settings.txt"
+		reg query "HKEY_CURRENT_USER\Control Panel\Desktop" /v ScreenSaveTimeOut >> "%tempdir%\Req 8\8.5.15 %Hostname% Screensaver Settings.txt" 
 	echo --------------------------------------------------
 	echo Grabbing RDP Encryption and Idle Settings
 	echo --------------------------------------------------
@@ -250,10 +253,10 @@ echo:
 REM	echo --------------------------------------------------
 REM	echo  Executing WinAudit
 REM	echo --------------------------------------------------
-REM		cd %filedir%\tools\
-		%filedir%\tools\WinAudit.exe /r=gsoPxuTUeERNtnzDaIbMpmidcSArCOHG /m="PCI WinAudit"
+	cd %filedir%\tools\
+	WinAudit.exe /r=gsoPxuTUeERNtnzDaIbMpmidcSArCOHG /f="%tempdir%\%computername% WinAudit.html" /m="PCI DSS v3.2.1 - WinAudit"
 
-cd %filedir%\tools\
+	cd %filedir%\tools\
 	echo --------------------------------------------------
 	echo Dump of active Active Directory users
 	echo --------------------------------------------------

@@ -4,15 +4,14 @@
 
  Description
  -----------
- Auditing tool to check for PCI Compliance and the specific requients
- associated with the corresponding output files.
+ Auditing tool to check for PCI Compliance and the specific requirements associated with the
+ corresponding output files.
  
- It is intended to be run by security auditors and pentetration testers 
- against systems they have been engaged to assess, and also by system 
- admnisitrators who want to check configuration files for PCI Compliance.
-
- Ensure that you have the appropriate legal permission before running it
- someone else's system.
+ It is intended to be run by security auditors and penetration testers against systems they have been
+ engaged to assess, and by system administrators who want to check configuration files for PCI
+ Compliance.
+ 
+ Ensure that you have the appropriate legal permission before running it someone else's system.
 
  Files
  -------
@@ -25,7 +24,6 @@
  -------
  Saved - Directory of Saved Audit Files
  tools - Directory of Tools that Are Used
-
 
  License
  -------

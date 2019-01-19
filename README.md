@@ -5,10 +5,10 @@
 
  Description
  -----------
- Auditing tool to check for PCI Compliance and the specific requirements associated with the
+ Assessment tool to check for PCI Compliance and the specific requirements associated with the
  corresponding output files.
  
- It is intended to be run by security auditors and penetration testers against systems they have been
+ It is intended to be run by security assessors and penetration testers against systems they have been
  engaged to assess, and by system administrators who want to check configuration files for PCI
  Compliance.
  
@@ -25,7 +25,7 @@
 
  Directories
  -------
-  Saved - Directory of Saved Audit Files  
+  Saved - Directory of Saved Assessment Files  
   tools - Directory of Tools that Are Used  
 
 

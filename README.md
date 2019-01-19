@@ -1,5 +1,5 @@
  PCI_Configs - Checks your systems for PCI Compliance
- Copyright (C) 2014 Joseph Barcia - joseph@barcia.me
+ original Copyright (C) 2014 Joseph Barcia - joseph@barcia.me
  https://github.com/jbarcia
 
  Description

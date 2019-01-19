@@ -1,6 +1,9 @@
  PCI_Configs - Checks your systems for PCI Compliance
+ 
  original Copyright (C) 2014 Joseph Barcia - joseph@barcia.me
+ 
  https://github.com/jbarcia
+
 
  Description
  -----------
@@ -13,6 +16,7 @@
  
  Ensure that you have the appropriate legal permission before running it someone else's system.
 
+
  Files
  -------
  COPYING.GPL - License File
@@ -20,10 +24,12 @@
  PCI_Configs.sh - Script for Linux Systems
  README.md - This File
 
+
  Directories
  -------
  Saved - Directory of Saved Audit Files
  tools - Directory of Tools that Are Used
+
 
  License
  -------

@@ -103,10 +103,10 @@ echo --------------------------------------------------
 echo  Grabbing Users
 echo --------------------------------------------------
 	cat /etc/passwd | cut -d: -f1,5 >> "$tempdir/Req 8/8.1 $HOSTNAME Users.txt"
-	cat /etc/shadow | cut -d: -f2 | cut -d$ -f 2 >> "$tempdir/Req 8/8.1 $HOSTNAME Users 2.txt"
+	cat /etc/shadow | cut -d: -f2 | cut -d$ -f 2 >> "$tempdir/Req 8/8.1 $HOSTNAME Users 2.txt" # elevated permissions need
 #	cat /etc/shadow | cut -d: -f1 >> "$tempdir/Req 8/8.1 $HOSTNAME Users 2.txt"
-	last >> "$tempdir/Req 8/8.1 $HOSTNAME Last Users Connected.txt"
-	w >> "$tempdir/Req 8/8.1 $HOSTNAME Last Users Connected 2.txt"
+	last >> "$tempdir/Req 8/8.1 $HOSTNAME Last Users Connected.txt" # displays all the users logged in/out since the file /var/log/wtmp was created
+	w >> "$tempdir/Req 8/8.1 $HOSTNAME Last Users Connected 2.txt" # shows who is logged on and what they are doing
 	cat /etc/group | cut -d: -f1 >> "$tempdir/Req 8/8.1 $HOSTNAME Groups.txt"
 echo --------------------------------------------------
 echo  Grabbing Administrators
